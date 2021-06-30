@@ -4,7 +4,7 @@
         <attribute name="bodyText_" optional="YES" attributeType="String"/>
         <attribute name="createdAt_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="formattedText_" optional="YES" attributeType="Binary" customClassName="NSA"/>
-        <attribute name="img_" optional="YES" attributeType="Binary"/>
+        <attribute name="img" optional="YES" attributeType="Binary"/>
         <attribute name="status_" optional="YES" attributeType="String"/>
         <attribute name="title_" optional="YES" attributeType="String"/>
         <attribute name="uuid_" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>

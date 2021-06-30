@@ -24,7 +24,12 @@ extension Note {
     
     var title: String {
         get { return title_ ?? "" }
-        set { title_ = newValue }
+        set {
+            title_ = newValue
+            if let conxtext = self.managedObjectContext {
+                try? conxtext.save()
+            }
+        }
     }
     
     var createdAt: Date {
@@ -36,6 +41,9 @@ extension Note {
         get { return bodyText_ ?? "" }
         set {
             bodyText_ = newValue
+            if let conxtext = self.managedObjectContext {
+                try? conxtext.save()
+            }
         }
     }
     
@@ -43,6 +51,7 @@ extension Note {
         get { return uuid_ ?? UUID() }
         set { uuid_ = newValue }
     }
+    
     
     var status: Status {
         get { return Status(rawValue: status_ ?? "") ?? Status.draft }
@@ -60,6 +69,9 @@ extension Note {
         set {
             bodyText_ = newValue.string
             formattedText_ = newValue.toNSData() as Data?
+            if let conxtext = self.managedObjectContext {
+                try? conxtext.save()
+            }
         }
     }
     
@@ -89,7 +101,6 @@ struct  NoteProperties {
     static let title = "title_"
     static let uuid = "uuid_"
     static let status = "status_"
-    static let img = "img_"
     static let bodyText = "bodyText_"
     static var formattedText = "formattedText_"
 }
