@@ -9,12 +9,21 @@ import Foundation
 import CoreData
 
 struct UnitTestHelpers {
-    static func deletesAllNotes(containter: NSPersistentCloudKitContainer) {
-        let context = containter.viewContext
+    static func deletesAllNotes(container: NSPersistentCloudKitContainer) {
+        let context = container.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
         
-        try? containter.persistentStoreCoordinator.execute(deleteRequest, with: context)
+        _ = try? container.persistentStoreCoordinator.execute(deleteRequest, with: context)
+    }
+    
+    static func deleteAllFolders(container: NSPersistentCloudKitContainer) {
+        let context = container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Folder")
+        
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+        
+        _ = try? container.persistentStoreCoordinator.execute(deleteRequest, with: context)
     }
 }

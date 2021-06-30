@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Folder" representedClassName="Folder" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name_" optional="YES" attributeType="String"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uuid_" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="notes_" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="folder" inverseEntity="Note"/>
+    </entity>
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
         <attribute name="bodyText_" optional="YES" attributeType="String"/>
         <attribute name="createdAt_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="formattedText_" optional="YES" attributeType="Binary" customClassName="NSA"/>
         <attribute name="img" optional="YES" attributeType="Binary"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="status_" optional="YES" attributeType="String"/>
         <attribute name="title_" optional="YES" attributeType="String"/>
         <attribute name="uuid_" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="notes_" inverseEntity="Folder"/>
     </entity>
     <elements>
-        <element name="Note" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Note" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="Folder" positionX="-300.6460571289062" positionY="-21.96047973632812" width="141.6527709960938" height="118"/>
     </elements>
 </model>

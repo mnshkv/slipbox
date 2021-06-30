@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B2C4424268C9A6B00B1DF4C /* Folder+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C4423268C9A6B00B1DF4C /* Folder+helper.swift */; };
+		3B2C4425268C9A6B00B1DF4C /* Folder+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C4423268C9A6B00B1DF4C /* Folder+helper.swift */; };
+		3B2C4427268C9AEF00B1DF4C /* FolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C4426268C9AEF00B1DF4C /* FolderTests.swift */; };
 		3B671AF6268B4F2200AF1D28 /* SlipboxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B671AF5268B4F2200AF1D28 /* SlipboxAppApp.swift */; };
 		3B671AF8268B4F2200AF1D28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B671AF7268B4F2200AF1D28 /* ContentView.swift */; };
 		3B671AFA268B4F2300AF1D28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B671AF9268B4F2300AF1D28 /* Assets.xcassets */; };
@@ -62,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B2C4423268C9A6B00B1DF4C /* Folder+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Folder+helper.swift"; sourceTree = "<group>"; };
+		3B2C4426268C9AEF00B1DF4C /* FolderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTests.swift; sourceTree = "<group>"; };
 		3B671AF2268B4F2200AF1D28 /* SlipboxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlipboxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B671AF5268B4F2200AF1D28 /* SlipboxAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipboxAppApp.swift; sourceTree = "<group>"; };
 		3B671AF7268B4F2200AF1D28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,6 +189,7 @@
 			children = (
 				3B671B0D268B4F2300AF1D28 /* SlipboxAppTests.swift */,
 				3BB5188D268B56D700771A72 /* NotesTests.swift */,
+				3B2C4426268C9AEF00B1DF4C /* FolderTests.swift */,
 				3B671B0F268B4F2300AF1D28 /* Info.plist */,
 			);
 			path = SlipboxAppTests;
@@ -247,6 +253,7 @@
 				3B671B49268B508800AF1D28 /* Note+helper.swift */,
 				3B6DD404268C53FC003F29BC /* Status.swift */,
 				3B6DD407268C5827003F29BC /* NSData+text.swift */,
+				3B2C4423268C9A6B00B1DF4C /* Folder+helper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -459,6 +466,7 @@
 				3B6DD412268C8185003F29BC /* helper+for+nsitem+conversion.swift in Sources */,
 				3BB51894268B728A00771A72 /* NoteListView.swift in Sources */,
 				3B6DD405268C53FC003F29BC /* Status.swift in Sources */,
+				3B2C4424268C9A6B00B1DF4C /* Folder+helper.swift in Sources */,
 				3B671B4A268B508800AF1D28 /* Note+helper.swift in Sources */,
 				3B671AFF268B4F2300AF1D28 /* Persistence.swift in Sources */,
 				3B671B02268B4F2300AF1D28 /* SlipboxApp.xcdatamodeld in Sources */,
@@ -475,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B671B0E268B4F2300AF1D28 /* SlipboxAppTests.swift in Sources */,
+				3B2C4427268C9AEF00B1DF4C /* FolderTests.swift in Sources */,
 				3BB5188E268B56D700771A72 /* NotesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +502,7 @@
 			files = (
 				3BB5189B268B7A4B00771A72 /* NoteRow.swift in Sources */,
 				3BB5188C268B54B000771A72 /* NSPredicate+helper.swift in Sources */,
+				3B2C4425268C9A6B00B1DF4C /* Folder+helper.swift in Sources */,
 				3BB51891268B5B3800771A72 /* UnitTest+helper.swift in Sources */,
 				3BB51895268B728A00771A72 /* NoteListView.swift in Sources */,
 				3B6DD406268C53FC003F29BC /* Status.swift in Sources */,

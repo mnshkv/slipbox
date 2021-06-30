@@ -57,6 +57,9 @@ struct NoteView: View {
             if let image = NSImage(contentsOf: item.absoluteURL) {
                 let data = image.tiffRepresentation
                 note.img = data
+                if let context = note.managedObjectContext {
+                    try? context.save()
+                }
             }
         }
 

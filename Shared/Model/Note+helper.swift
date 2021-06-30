@@ -72,6 +72,7 @@ extension Note {
             if let conxtext = self.managedObjectContext {
                 try? conxtext.save()
             }
+            
         }
     }
     
@@ -92,6 +93,14 @@ extension Note {
     }
     
     static var defaultText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+}
+
+// MARK: - sort notest for showing in list
+
+extension Note: Comparable {
+    public static func < (lhs: Note, rhs: Note) -> Bool {
+        lhs.order < rhs.order
+    }
 }
 
 // MARK: - propery names as strings
