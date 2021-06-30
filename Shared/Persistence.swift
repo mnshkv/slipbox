@@ -13,9 +13,13 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Note(title: "new note", context: viewContext)
+        
+        
+        for i in 0..<5 {
+            let newItem = Note(title: "\(i) note", context: viewContext)
+            newItem.bodyText = Note.defaultText
         }
+
         do {
             try viewContext.save()
         } catch {

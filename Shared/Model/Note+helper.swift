@@ -34,7 +34,9 @@ extension Note {
     
     var bodyText: String {
         get { return bodyText_ ?? "" }
-        set { bodyText_ = newValue }
+        set {
+            bodyText_ = newValue
+        }
     }
     
     var uuid: UUID {
@@ -42,9 +44,24 @@ extension Note {
         set { uuid_ = newValue }
     }
     
-//    var status: String {
-//        get { return status_ ?? "" }
-//    }
+    var status: Status {
+        get { return Status(rawValue: status_ ?? "") ?? Status.draft }
+        set { status_ = newValue.rawValue }
+    }
+    
+    var formattedText: NSAttributedString {
+        get {
+            if let data = formattedText_ as NSData? {
+                return data.toAttributedString()
+            } else {
+                return NSAttributedString(string: "")
+            }
+        }
+        set {
+            bodyText_ = newValue.string
+            formattedText_ = newValue.toNSData() as Data?
+        }
+    }
     
     static func fetch(_ predicate: NSPredicate) -> NSFetchRequest<Note> {
         let request = NSFetchRequest<Note>(entityName: "Note")
@@ -58,8 +75,11 @@ extension Note {
     static func delete(note: Note) {
         if let context = note.managedObjectContext {
             context.delete(note)
+            try? context.save()
         }
     }
+    
+    static var defaultText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 }
 
 // MARK: - propery names as strings
@@ -71,4 +91,5 @@ struct  NoteProperties {
     static let status = "status_"
     static let img = "img_"
     static let bodyText = "bodyText_"
+    static var formattedText = "formattedText_"
 }

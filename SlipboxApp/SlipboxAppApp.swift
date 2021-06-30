@@ -16,6 +16,9 @@ struct SlipboxAppApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .frame(minWidth: 600, minHeight: 400)
+//                .onAppear(perform: {
+//                    UnitTestHelpers.deletesAllNotes(containter: persistenceController.container)
+//                })
         }
     }
 }

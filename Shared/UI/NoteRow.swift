@@ -25,15 +25,14 @@ struct NoteRow: View {
             }
             
             Text(bodyText)
-                .lineLimit(2)
+                .lineLimit(3)
                 .font(.caption)
         }
         .padding(8)
         .background(
             RoundedRectangle(cornerRadius: 5)
                 .fill(isSelected ? selectedColor : unSelectedColor)
-        )
-        .padding(.bottom)
+        ) 
     }
 }
 
@@ -45,10 +44,13 @@ private let itemFormatter: DateFormatter = {
 }()
 
 struct NoteRow_Previews: PreviewProvider {
+        
     static var previews: some View {
-        VStack(spacing: 5.0) {
-            NoteRow(title: "Title", bodyText: "body text", createdAt: Date(), isSelected: false)
-            NoteRow(title: "Title", bodyText: "body text", createdAt: Date(), isSelected: true)
+        let bodyText = Note.defaultText
+        
+        return VStack(spacing: 5.0) {
+            NoteRow(title: "Title", bodyText: bodyText, createdAt: Date(), isSelected: false)
+            NoteRow(title: "Title", bodyText: bodyText, createdAt: Date(), isSelected: true)
         }
         .padding()
         .frame(width: 250)

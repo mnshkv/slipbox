@@ -11,10 +11,26 @@ struct NoteView: View {
     @ObservedObject var note: Note
     
     var body: some View {
-        VStack(spacing: 0.0) {
+        VStack(alignment: .leading, spacing: 10.0) {
+            Picker(selection: $note.status, label: Text("Status"), content: {
+                ForEach(Status.allCases, id: \.self) { status in
+                    Text(status.rawValue)
+                }
+            })
+            .pickerStyle(SegmentedPickerStyle())
+            .frame(maxWidth: 250)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            
             TextField("Notes title", text: $note.title)
-            TextEditor(text: $note.bodyText)
+                .font(.title)
+                .textFieldStyle(PlainTextFieldStyle())
+            
+            TextViewWrapper(note: note)
+                        
+            Text("Keywords: ")
+            Text("linked Notes: ")
         }
+        .padding()
     }
 }
 

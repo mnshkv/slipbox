@@ -24,6 +24,12 @@
 		3B671B46268B500300AF1D28 /* SlipboxApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B671B00268B4F2300AF1D28 /* SlipboxApp.xcdatamodeld */; };
 		3B671B47268B502500AF1D28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B671AF7268B4F2200AF1D28 /* ContentView.swift */; };
 		3B671B4A268B508800AF1D28 /* Note+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B671B49268B508800AF1D28 /* Note+helper.swift */; };
+		3B6DD405268C53FC003F29BC /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6DD404268C53FC003F29BC /* Status.swift */; };
+		3B6DD406268C53FC003F29BC /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6DD404268C53FC003F29BC /* Status.swift */; };
+		3B6DD408268C5827003F29BC /* NSData+text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6DD407268C5827003F29BC /* NSData+text.swift */; };
+		3B6DD409268C5827003F29BC /* NSData+text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6DD407268C5827003F29BC /* NSData+text.swift */; };
+		3B6DD40C268C76AC003F29BC /* TextViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6DD40B268C76AC003F29BC /* TextViewWrapper.swift */; };
+		3B6DD40F268C7B20003F29BC /* TextViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6DD40E268C7B20003F29BC /* TextViewWrapper.swift */; };
 		3BB5188A268B531200771A72 /* NSPredicate+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB51889268B531200771A72 /* NSPredicate+helper.swift */; };
 		3BB5188B268B54A300771A72 /* Note+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B671B49268B508800AF1D28 /* Note+helper.swift */; };
 		3BB5188C268B54B000771A72 /* NSPredicate+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB51889268B531200771A72 /* NSPredicate+helper.swift */; };
@@ -80,6 +86,10 @@
 		3B671B41268B4F8300AF1D28 /* SlipboxPad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlipboxPad.entitlements; sourceTree = "<group>"; };
 		3B671B42268B4F8500AF1D28 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		3B671B49268B508800AF1D28 /* Note+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+helper.swift"; sourceTree = "<group>"; };
+		3B6DD404268C53FC003F29BC /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		3B6DD407268C5827003F29BC /* NSData+text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSData+text.swift"; sourceTree = "<group>"; };
+		3B6DD40B268C76AC003F29BC /* TextViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWrapper.swift; sourceTree = "<group>"; };
+		3B6DD40E268C7B20003F29BC /* TextViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWrapper.swift; sourceTree = "<group>"; };
 		3BB51889268B531200771A72 /* NSPredicate+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+helper.swift"; sourceTree = "<group>"; };
 		3BB5188D268B56D700771A72 /* NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTests.swift; sourceTree = "<group>"; };
 		3BB5188F268B5B3800771A72 /* UnitTest+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnitTest+helper.swift"; sourceTree = "<group>"; };
@@ -149,6 +159,7 @@
 		3B671AF4268B4F2200AF1D28 /* SlipboxApp */ = {
 			isa = PBXGroup;
 			children = (
+				3B6DD40A268C7682003F29BC /* UI */,
 				3B671AF5268B4F2200AF1D28 /* SlipboxAppApp.swift */,
 				3B671AF9268B4F2300AF1D28 /* Assets.xcassets */,
 				3B671B03268B4F2300AF1D28 /* Info.plist */,
@@ -197,6 +208,7 @@
 		3B671B2E268B4F7C00AF1D28 /* SlipboxPad */ = {
 			isa = PBXGroup;
 			children = (
+				3B6DD40D268C7B13003F29BC /* UI */,
 				3B671B41268B4F8300AF1D28 /* SlipboxPad.entitlements */,
 				3B671B2F268B4F7C00AF1D28 /* SlipboxPadApp.swift */,
 				3B671B33268B4F7C00AF1D28 /* Assets.xcassets */,
@@ -231,8 +243,26 @@
 			isa = PBXGroup;
 			children = (
 				3B671B49268B508800AF1D28 /* Note+helper.swift */,
+				3B6DD404268C53FC003F29BC /* Status.swift */,
+				3B6DD407268C5827003F29BC /* NSData+text.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3B6DD40A268C7682003F29BC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3B6DD40B268C76AC003F29BC /* TextViewWrapper.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3B6DD40D268C7B13003F29BC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3B6DD40E268C7B20003F29BC /* TextViewWrapper.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		3BB51888268B52F500771A72 /* Helpers */ = {
@@ -417,12 +447,15 @@
 				3BB5188A268B531200771A72 /* NSPredicate+helper.swift in Sources */,
 				3BB51890268B5B3800771A72 /* UnitTest+helper.swift in Sources */,
 				3BB51894268B728A00771A72 /* NoteListView.swift in Sources */,
+				3B6DD405268C53FC003F29BC /* Status.swift in Sources */,
 				3B671B4A268B508800AF1D28 /* Note+helper.swift in Sources */,
 				3B671AFF268B4F2300AF1D28 /* Persistence.swift in Sources */,
 				3B671B02268B4F2300AF1D28 /* SlipboxApp.xcdatamodeld in Sources */,
 				3B671AF8268B4F2200AF1D28 /* ContentView.swift in Sources */,
 				3B671AF6268B4F2200AF1D28 /* SlipboxAppApp.swift in Sources */,
+				3B6DD40C268C76AC003F29BC /* TextViewWrapper.swift in Sources */,
 				3BB51897268B730000771A72 /* NoteView.swift in Sources */,
+				3B6DD408268C5827003F29BC /* NSData+text.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,12 +484,15 @@
 				3BB5188C268B54B000771A72 /* NSPredicate+helper.swift in Sources */,
 				3BB51891268B5B3800771A72 /* UnitTest+helper.swift in Sources */,
 				3BB51895268B728A00771A72 /* NoteListView.swift in Sources */,
+				3B6DD406268C53FC003F29BC /* Status.swift in Sources */,
 				3BB5188B268B54A300771A72 /* Note+helper.swift in Sources */,
 				3B671B47268B502500AF1D28 /* ContentView.swift in Sources */,
 				3B671B30268B4F7C00AF1D28 /* SlipboxPadApp.swift in Sources */,
 				3B671B46268B500300AF1D28 /* SlipboxApp.xcdatamodeld in Sources */,
 				3B671B45268B4FDD00AF1D28 /* Persistence.swift in Sources */,
+				3B6DD40F268C7B20003F29BC /* TextViewWrapper.swift in Sources */,
 				3BB51898268B730000771A72 /* NoteView.swift in Sources */,
+				3B6DD409268C5827003F29BC /* NSData+text.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
